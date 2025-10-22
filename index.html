@@ -1,197 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maurice’s Groove Hub</title>
-  <style>
-    /* ——— Base Layout ——— */
-    body {
-      margin: 0;
-      font-family: 'Trebuchet MS', 'Helvetica Neue', sans-serif;
-      background-color: #f8f1e1;
-      color: #2c0903;
-      background-image: 
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 80%),
-        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-attachment: fixed;
-      animation: shimmer 18s linear infinite;
-      background-size: cover;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 0 0, 0 0; }
-      50% { background-position: 5% 5%, 0 0; }
-      100% { background-position: 0 0, 0 0; }
-    }
-
-    header {
-      background: linear-gradient(90deg, #5e1d24 0%, #b97b28 100%);
-      color: #f8f1e1;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-
-    .card {
-      background-color: #fff8ec;
-      border-radius: 18px;
-      padding: 1.2rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: 1px solid #d4b48c;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      filter: sepia(0.25) contrast(1.05);
-    }
-
-    h3 {
-      margin-top: 0.8rem;
-      color: #541c16;
-    }
-
-    p {
-      font-size: 0.95rem;
-      color: #5a2e2a;
-    }
-
-    a.stream-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #b05b22;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a.stream-link:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-style: italic;
-      color: #b05b22;
-    }
-
-    /* ——— Toggle ——— */
-    .toggle-container {
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .toggle-label {
-      color: #5a2e2a;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    input[type="checkbox"] {
-      accent-color: #b97b28;
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maurice’s GrooveHub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>🎶 Maurice’s Groove Hub 🎶</header>
+  <header>🎶 Maurice’s GrooveHub 🎶</header>
 
-  <div class="grid">
-    <div class="card">
-      <img src="https://i.ytimg.com/vi/7hEfdMzBQrQ/maxresdefault.jpg" alt="Soulful House DJs">
-      <h3>Soulful House DJs (Mixcloud)</h3>
-      <p>Global DJs spinning deep, soulful, and funky house sets 24/7.</p>
-      <a class="stream-link" href="https://www.mixcloud.com/soulfulhousedjs/stream/" target="_blank">Listen Now →</a>
-    </div>
+  <main id="record-shelf">
+    <div class="record" data-stream="https://us2.internet-radio.com/proxy/deephouselounge?mp=/stream" data-color="#bfa76f">Deep House Lounge</div>
+    <div class="record" data-stream="https://listen.loungemusicradio.net/stream" data-color="#9c8a60">LoungeRadio</div>
+    <div class="record" data-stream="https://stream.rcs.revma.com/ypqt40u0x1zuv" data-color="#7b6338">Mi-Soul</div>
+    <div class="record" data-stream="https://ice1.somafm.com/groovesaladclassic-128-mp3" data-color="#ccae77">Groove Salad Classic</div>
+    <div class="record" data-stream="https://streaming.live365.com/a39393" data-color="#a47c4d">Funk Republic Radio</div>
+  </main>
 
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Twitch_logo_2019.svg" alt="Soulful House Music Collage">
-      <h3>Soulful House Music Collage (Twitch)</h3>
-      <p>Live soulful house mixes from DJs worldwide – 7 days a week.</p>
-      <a class="stream-link" href="https://www.twitch.tv/soulfulhousemusiccollage" target="_blank">Watch Live →</a>
-    </div>
-
-    <div class="card">
-      <img src="https://defected.com/media/wysiwyg/brand_pages/glitterbox_hero.jpg" alt="Glitterbox Radio">
-      <h3>Glitterbox Radio (Mixcloud)</h3>
-      <p>Defected’s uplifting disco and soulful house grooves – pure vibes.</p>
-      <a class="stream-link" href="https://www.mixcloud.com/glitterboxradio/" target="_blank">Listen Now →</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/5858/5858943.png" alt="Neo Soul Sessions">
-      <h3>Neo Soul Sessions (Podomatic)</h3>
-      <p>Hand-curated neo-soul mixes with that Dwele / Maxwell groove.</p>
-      <a class="stream-link" href="https://www.podomatic.com/podcasts/neosoulsessions" target="_blank">Listen Now →</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/13/38/black-vinyl-1869442_1280.jpg" alt="Black House Radio">
-      <h3>Black House Radio (Mixcloud)</h3>
-      <p>Funky, vocal-driven soulful house sets with timeless energy.</p>
-      <a class="stream-link" href="https://www.mixcloud.com/blackhouseradio/" target="_blank">Listen Now →</a>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2016/03/09/09/15/headphones-1245713_1280.jpg" alt="Neo Soul Café">
-      <h3>Neo Soul Café (Podomatic)</h3>
-      <p>The best in neo-soul and smooth grooves — Maxwell, Dwele, Jill Scott vibes.</p>
-      <a class="stream-link" href="https://www.podomatic.com/podcasts/neosoulcafe" target="_blank">Listen Now →</a>
-    </div>
+  <div class="controls">
+    <span id="now-playing">Select a station to begin...</span>
+    <label class="toggle">
+      <input type="checkbox" id="vinyl-toggle"> Vinyl Crackle
+    </label>
   </div>
 
-  <div class="toggle-container">
-    <label class="toggle-label" for="vinyl-toggle">Vinyl Crackle:</label>
-    <input type="checkbox" id="vinyl-toggle" />
-  </div>
+  <footer>
+    <span id="trivia"></span>
+  </footer>
 
-  <footer>Made with ❤️ by Maurice & ChatGPT</footer>
-
+  <audio id="playerA"></audio>
+  <audio id="playerB"></audio>
   <audio id="crackle" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7e502e086c.mp3?filename=vinyl-crackle-110099.mp3" type="audio/mpeg">
   </audio>
 
-  <script>
-    const toggle = document.getElementById('vinyl-toggle');
-    const audio = document.getElementById('crackle');
-    const savedState = localStorage.getItem('vinylCrackle');
-
-    if (savedState === 'on') {
-      toggle.checked = true;
-      audio.volume = 0.3;
-      audio.play();
-    }
-
-    toggle.addEventListener('change', () => {
-      if (toggle.checked) {
-        audio.volume = 0.3;
-        audio.play();
-        localStorage.setItem('vinylCrackle', 'on');
-      } else {
-        audio.pause();
-        localStorage.setItem('vinylCrackle', 'off');
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
